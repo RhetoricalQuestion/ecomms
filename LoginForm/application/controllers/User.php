@@ -14,6 +14,7 @@
         public function index(){
             $this->load->view('templates/headercom.php');
             $this->load->view('pages/home_admin.php');
+            $this->load->view('templates/footercom.php');
         }
         
         public function register_view(){

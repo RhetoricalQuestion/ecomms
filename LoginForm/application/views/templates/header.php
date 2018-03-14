@@ -2,7 +2,7 @@
         <head>
             <title>Waddup</title>
             <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/css/bootstrap.min.css');?>" />
-            <script src="<?php echo base_url('lib/jquery.min.js'); ?>"></script>
+            <script src="<?php echo base_url('jquery/jquery-3.3.1.min.js'); ?>"></script>
         </head>
         <body>          
             <nav class="navbar navbar-dark bg-dark">

@@ -1,37 +1,14 @@
 <html>
         <head>
             <title>Home</title>
-            <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/css/bootstrap.min.css');?>" />
-            <script src="<?php echo base_url('lib/jquery.min.js'); ?>"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/css/bootstrap.min.css');?>"/>
+            <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/formstyle.css');?>"/>
+            <link rel="stylesheet" type="text/css" href="<?php echo base_url('DataTables/datatables.min.css');?>"/>
+            <script type="text/javascript" src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
+            <script src="<?php echo base_url('jquery/jquery-3.3.1.min.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('DataTables/datatables.min.js');?>"></script>
         </head>
         <body>          
             <nav class="navbar navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Waddup</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarsExample01">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">  
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-md-0">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
+                <a class="navbar-brand" href="#">Zenith</a>
             </nav>
