@@ -5,6 +5,7 @@
      var $select_column = array("prod_id", "prod_name", "prod_code", "prod_stock", "prod_image", "prod_price");  
      var $order_column = array(null, "prod_name", "prod_code", "prod_stock", null, "prod_price", null);  
      function make_query(){
+            
             $this->db->select($this->select_column);  
             $this->db->from($this->table);  
             if(isset($_POST["search"]["value"])){  
@@ -15,12 +16,12 @@
                 $this->db->order_by($this->order_column[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);  
             }  
             else{  
-                $this->db->order_by('id', 'DESC');  
+                $this->db->order_by('prod_id', 'DESC');  
             }  
      }  
      function make_datatables(){  
          $this->make_query();  
-         if($_POST["length"] != -1)  
+         if($_POST['length'] != -1)  
          {  
              $this->db->limit($_POST['length'], $_POST['start']);  
          }  

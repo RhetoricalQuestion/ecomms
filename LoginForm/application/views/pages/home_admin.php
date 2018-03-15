@@ -36,7 +36,7 @@
         </div>
         <div class="col-sm-8">
             <div class="container box">  
-                <h3 align="center">Table</h3><br />  
+                <h3 align="center">Items Database</h3><br />  
                 <div class="table-responsive">  
                     <table id="item_data" class="table table-bordered table-striped">  
                         <thead>  
@@ -55,3 +55,58 @@
         </div>
     </div>
 </div>
+
+<script>  
+ $(document).ready(function(){  
+      var dataTable = $('#item_data').DataTable({  
+           "processing":true,  
+           "serverSide":true,  
+           "order":[],  
+           "ajax":{
+               type: 'POST',
+               url:"<?php echo base_url() . 'index.php/admin/fetch_user'; ?>",  
+           },  
+           "columnDefs":[  
+                {  
+                     "targets":[0, 5, 4],  
+                     "orderable":false,  
+                },  
+           ],  
+      });  
+      $(document).on('submit', '#item_form', function(event){  
+           event.preventDefault();  
+          var prodName = $('#prod_name').val();  
+          var prodCode = $('#prod_code').val();
+          var prodStock = $('#prod_stock').val();  
+          var prodPrice = $('#prod_price').val();  
+          var extension = $('#prod_image').val().split('.').pop().toLowerCase();  
+          
+           if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+           {  
+                alert("Invalid Image File");  
+                $('#prod_image').val('');  
+                return false;  
+           }  
+           if(prodName != '' && prodCode != '' && prodStock != '' && prodPrice != '')  
+           {  
+                $.ajax({  
+                     url:"<?php echo base_url().'index.php/admin/user_action'?>",  
+                     method:'POST',  
+                     data:new FormData(this),  
+                     contentType:false,  
+                     processData:false,  
+                     success:function(data)  
+                     {  
+                          alert(data);  
+                          $('#item_form')[0].reset();  
+                          dataTable.ajax.reload();  
+                     }  
+                });  
+           }  
+           else  
+           {  
+                alert("Fields are Required");  
+           }  
+      });  
+ });  
+ </script>  

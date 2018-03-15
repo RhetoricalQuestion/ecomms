@@ -1,10 +1,19 @@
 <?php
  
-    class User extends CI_Controller {
-        
+    class Admin extends CI_Controller {
+        public function __construct(){
+            
+        parent::__construct();
+            $this->load->helper('url');
+            $this->load->model('user_model');
+            $this->load->library('session');
+ 
+        }
         function index(){  
            $data["title"] = "Codeigniter Ajax CRUD with Data Tables and Bootstrap Modals";  
-           $this->load->view('crud_view', $data);  
+           $this->load->view('templates/headercom.php', $data);
+            $this->load->view('pages/home_admin.php', $data);
+            $this->load->view('templates/footercom.php', $data);
       }  
       function fetch_user(){  
            $this->load->model("Admin_model");  
@@ -50,7 +59,7 @@
            {  
                 $extension = explode('.', $_FILES['prod_image']['name']);  
                 $new_name = rand() . '.' . $extension[1];  
-                $destination = './assets/item_images' . $new_name;  
+                $destination = '.index.php/assets/item_images' . $new_name;  
                 move_uploaded_file($_FILES['prod_image']['tmp_name'], $destination);  
                 return $new_name;  
            }  
